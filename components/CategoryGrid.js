@@ -5,8 +5,8 @@ const { height, width } = Dimensions.get("window");
 function CategoryGrid({title, color}) {
   return(
     <View style = {styles.Items}>
-      <Pressable android_ripple={{color: "darkgray"}} style ={({pressed}) => [styles.button, pressed ? styles.ifButtonPressed : null]} >
-        <View style = {styles.content}>
+      <Pressable android_ripple={{color: "gray"}} style ={({pressed}) => [styles.button, pressed ? styles.ifButtonPressed : null]} >
+        <View style = {[styles.content, {backgroundColor: color}]}>
           <Text style = {styles.title}>
             {title}
           </Text>
@@ -42,7 +42,8 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 12,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    borderRadius: 10
   },
   title: {
     fontSize: 16,
