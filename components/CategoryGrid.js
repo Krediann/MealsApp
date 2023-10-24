@@ -1,11 +1,11 @@
-import { Pressable, View, Text, StyleSheet, Dimensions} from "react-native";
+import { Pressable, View, Text, StyleSheet, Dimensions, Platform} from "react-native";
 
 const { height, width } = Dimensions.get("window");
 
 function CategoryGrid({title, color}) {
   return(
     <View style = {styles.Items}>
-      <Pressable style = {styles.button}>
+      <Pressable android_ripple={{color: "darkgray"}} style ={({pressed}) => [styles.button, pressed ? styles.ifButtonPressed : null]} >
         <View style = {styles.content}>
           <Text style = {styles.title}>
             {title}
@@ -30,9 +30,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.35,
     shadowOffset: {width: 0, height: 3},
     shadowRadius: 10,
+    overflow: Platform.OS === "android" ? "hidden" : "visible", 
   },
   button: {
     flex: 1,
+  },
+  ifButtonPressed: {
+    opacity: 0.7
   },
   content: {
     flex: 1,
