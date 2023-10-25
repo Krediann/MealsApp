@@ -1,4 +1,3 @@
-import { StyleSheet} from 'react-native';
 import CategoryScreen from './screens/CategoryScreen';
 
 export default function App() {
@@ -6,8 +5,3 @@ export default function App() {
     <CategoryScreen />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-  },
-});
