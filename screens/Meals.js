@@ -20,7 +20,7 @@ function Meals({}) {
     imageUrl: item.imageUrl,
     duration: item.duration,
     }
-    
+
     return(
       <Meal {...mealProps} />
     )
