@@ -2,10 +2,10 @@ import { Pressable, View, Text, StyleSheet, Dimensions, Platform} from "react-na
 
 const { height, width } = Dimensions.get("window");
 
-function CategoryGrid({title, color}) {
+function CategoryGrid({title, color, PressedButton}) {
   return(
     <View style = {styles.Items}>
-      <Pressable android_ripple={{color: "gray"}} style ={({pressed}) => [styles.button, pressed ? styles.ifButtonPressed : null]} >
+      <Pressable android_ripple={{color: "gray"}} style ={({pressed}) => [styles.button, pressed ? styles.ifButtonPressed : null]} onPress = {PressedButton} >
         <View style = {[styles.content, {backgroundColor: color}]}>
           <Text style = {styles.title}>
             {title}
