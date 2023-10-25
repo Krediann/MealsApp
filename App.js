@@ -1,5 +1,6 @@
 import CategoryScreen from "./screens/CategoryScreen.js";
 import Meals from "./screens/Meals.js";
+import Details from "./screens/Details.js"
 import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -27,6 +28,7 @@ export default function App() {
             };
             }}
           />
+          <screenStack.Screen name = "DetailsScreen" component = {Details} />
         </screenStack.Navigator>
       </NavigationContainer>
       <StatusBar style = "dark" />
