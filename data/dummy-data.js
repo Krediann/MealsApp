@@ -2,12 +2,12 @@ import Category from '../models/category';
 import Meal from '../models/meal';
 
 export const CATEGORIES = [
-  new Category('c1', 'Italian', '#f5428d'),
-  new Category('c2', 'Homefood', '#f54242'),
+  new Category('c1', 'Italian', '#FFC0CB'),
+  new Category('c2', 'Homefood', '#CD5C5C'),
   new Category('c3', 'Hamburgers', '#f5a442'),
   new Category('c4', 'Finnish', '#f5d142'),
-  new Category('c5', 'Heavy & Lovely', '#368dff'),
-  new Category('c6', 'Exotic', '#41d95d'),
+  new Category('c5', 'Heavy & Lovely', '#20B2AA'),
+  new Category('c6', 'Exotic', '#66CDAA'),
   new Category('c7', '2nd Breakfast', '#9eecff'),
   new Category('c8', 'Asian', '#b9ffb0'),
   new Category('c9', 'French', '#ffc7ff'),
