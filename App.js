@@ -8,6 +8,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Button } from "react-native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import { Ionicons } from "@expo/vector-icons"
 
 const screenStack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -17,10 +18,23 @@ function DrawerNav() {
     <Drawer.Navigator screenOptions={{
       headerStyle: {backgroundColor: "#F08080"},
       headerTintColor: "black",
-      sceneContainerStyle: {backgroundColor: "#483D8B"}
+      sceneContainerStyle: {backgroundColor: "#483D8B"},
+      drawerContentStyle: {backgroundColor: "#483D8B"},
+      drawerInactiveTintColor: "white",
+      drawerActiveTintColor: "black",
+      drawerActiveBackgroundColor: "#F08080"
     }}>
-      <Drawer.Screen name = "DrawerCategories" component = {CategoryScreen} options = {{title: "Categories"}}/>
-      <Drawer.Screen name = "Favorites" component = {Favorites} />
+      <Drawer.Screen name = "DrawerCategories" component = {CategoryScreen} options = {{
+        title: "Categories",
+        drawerIcon: ({color, size}) => (
+        <Ionicons color={color} size={size} />
+          ),
+        }}/>
+      <Drawer.Screen name = "Favorites" component = {Favorites} options = {{
+        drawerIcon: ({color, size}) => (
+        <Ionicons name = "heart" color={color} size={size} />
+          ),
+      }} />
     </Drawer.Navigator>
   )
 }
