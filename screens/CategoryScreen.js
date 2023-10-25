@@ -1,12 +1,18 @@
-import { CATEGORIES } from "../data/dummy-data";
+import {CATEGORIES} from "../data/dummy-data";
 import CategoryGrid from "../components/CategoryGrid";
-import { FlatList } from "react-native";
+import {FlatList} from "react-native";
+import {useNavigation} from "@react-navigation/native";
 
 
-function CategoryScreen({navigation}) {
+function CategoryScreen({}) {
+
+  const navigation = useNavigation();
+  
   function renderItemsInCategory(itemData) {
     function handlePress () {
-      navigation.navigate("Meals");
+      navigation.navigate("Meals", {
+        id: itemData.item.id,
+      });
     }
     return(
       <CategoryGrid title = {itemData.item.title} color = {itemData.item.color} PressedButton = {handlePress}/>
